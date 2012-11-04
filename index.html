@@ -1,0 +1,137 @@
+<!DOCTYPE html5>
+<html>
+
+
+
+    <head>
+        
+        <script type="text/javascript" src="move.min.js"></script>
+        
+        <script type="text/javascript">
+        function findwidandhid(){
+            var het = screen.availHeight;
+            var wid = screen.availWidth;
+            var lefter = (wid-412)/2;
+            document.getElementById("betl").style.left = lefter;
+            var leftist = (wid-12)/2;
+            document.getElementById("betr").style.left = leftist;
+            var lefter = (wid-412)/2;
+            document.getElementById("bebl").style.left = lefter;
+            var leftist = (wid-12)/2;
+            document.getElementById("bebr").style.left = leftist;
+        }
+        </script>
+        
+        <script type="text/javascript">
+        function changebetlo(){
+            move('#betl')
+                .set('left', 300)
+                .set('height', 400)
+                .set('top', 100)
+                .set('width', 400)
+                .set('border-top-left-radius', 10)
+                .duration('1s')
+                .end();
+        }
+        function changebetlc(){
+            move('#betl')
+                .set('left', 500)
+                .set('height', 200)
+                .set('top', 300)
+                .set('width', 200)
+                .set('border-top-left-radius', 200)
+                .duration('1s')
+                .end();
+        }
+        </script>
+    
+        <style type="text/css">
+        #betl{
+            position:absolute;
+            top:300px;
+            left:500px;
+            width:200px;
+            height:200px;
+            border:3px solid rgb(69,117,180);
+            background-color:rgb(254,224,144);
+            border-top-left-radius:200px;
+            -webkit-animation:changetl 3s;
+            -webkit-animation-play-state:paused;
+            -webkit-animation-fill-mode:forwards;
+        }
+        #betr{
+            position:absolute;
+            top:300px;
+            left:703px;
+            width:200px;
+            height:200px;
+            border:3px solid rgb(69,117,180);
+            background-color:rgb(252,141,89);
+            -webkit-border-top-right-radius:200px;
+        }
+        #bebl{
+            position:absolute;
+            top:503px;
+            left:500px;
+            width:200px;
+            height:200px;
+            border:3px solid rgb(69,117,180);
+            background-color:rgb(252,141,89);
+            border-bottom-left-radius:200px;
+        }
+        #bebr{
+            position:absolute;
+            top:503px;
+            left:703px;
+            width:200px;
+            height:200px;
+            border:3px solid rgb(69,117,180);
+            background-color:rgb(254,224,144);
+            border-bottom-right-radius:200px;
+        }
+        .smash{
+            position:relative;
+            top:55px;
+            left:100px;
+        }
+        </style>
+    
+    </head>
+    
+    
+    <body onload="findwidandhid();">
+        
+        <a id="betl" onclick="changebetlo();">
+            
+            <p class="smash">One</p>
+            
+        </a>
+        
+        <a id="betr" onclick="changebetlc()">
+            
+            <p class="smash">Two</p>
+        
+        </a>
+        
+        <a id="bebl">
+            
+            <p class="smash">Three</p>
+            
+        </a>
+        
+        <a id="bebr">
+            
+            <p class="smash">Four</p>
+            
+        </a>
+        
+    </body>
+    
+    
+    <form>
+    
+    </form>
+    
+    
+
+</html>
