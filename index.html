@@ -13,10 +13,16 @@
             var wid = screen.availWidth;
             var lefter = (wid-412)/2;
             var leftist = (wid-12)/2;
+            var topper = (het-412)/2;
+            var toppist = (het-12)/2;
             document.getElementById("betl").style.left = lefter;
+            document.getElementById("betl").style.top = topper;
             document.getElementById("betr").style.left = leftist;
+            document.getElementById("betr").style.top = topper;
             document.getElementById("bebl").style.left = lefter;
+            document.getElementById("bebl").style.top = toppist;
             document.getElementById("bebr").style.left = leftist;
+            document.getElementById("bebr").style.top = toppist;
         }
         </script>
         
@@ -24,11 +30,12 @@
         function changebetlo(){
             var het = screen.availHeight;
             var wid = screen.availWidth;
-            var lefter = ((wid-412)/2)-200;
+            var lefter = ((wid-412)/2)-203;
+            var topper = ((het-412)/2)-153;
             move('#betl')
                 .set('left', lefter)
-                .set('height', 400)
-                .set('top', 100)
+                .set('height', 350)
+                .set('top', topper)
                 .set('width', 400)
                 .set('border-top-left-radius', 10)
                 .duration('1s')
@@ -38,7 +45,7 @@
             var het = screen.availHeight;
             var wid = screen.availWidth;
             var lefter = (wid-412)/2;
-            var leftist = (wid-12)/2;
+            var topper = (het-412)/2;
             move('#betl')
                 .set('left', lefter)
                 .set('height', 200)
