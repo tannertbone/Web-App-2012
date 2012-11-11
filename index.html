@@ -15,6 +15,7 @@
             var leftist = (wid-12)/2;
             var topper = (het-412)/2;
             var toppist = (het-12)/2;
+            var leftmist = (wid-90)/2;
             document.getElementById("betl").style.left = lefter;
             document.getElementById("betl").style.top = topper;
             document.getElementById("betr").style.left = leftist;
@@ -23,6 +24,8 @@
             document.getElementById("bebl").style.top = toppist;
             document.getElementById("bebr").style.left = leftist;
             document.getElementById("bebr").style.top = toppist;
+            document.getElementById("bemi").style.top = topmist;
+            document.getElementById("bemi").style.left = leftmist;
         }
         </script>
         
@@ -31,10 +34,10 @@
             var het = screen.availHeight;
             var wid = screen.availWidth;
             var lefter = ((wid-415)/2)-203;
-            var topper = ((het-412)/2)-153;
+            var topper = ((het-412)/2)-123;
             move('#betl')
                 .set('left', lefter)
-                .set('height', 350)
+                .set('height', 320)
                 .set('top', topper)
                 .set('width', 400)
                 .set('border-top-left-radius', 10)
@@ -59,10 +62,10 @@
             var het = screen.availHeight;
             var wid = screen.availWidth;
             var leftist = (wid-12)/2;
-            var topper = ((het-412)/2)-153;
+            var topper = ((het-412)/2)-123;
             move('#betr')
                 .set('left', leftist)
-                .set('height', 350)
+                .set('height', 320)
                 .set('top', topper)
                 .set('width', 400)
                 .set('border-top-right-radius', 10)
@@ -80,6 +83,62 @@
                 .set('top', topper)
                 .set('width', 200)
                 .set('border-top-right-radius', 200)
+                .duration('1s')
+                .end();
+        }
+        function changebeblo(){
+            var het = screen.availHeight;
+            var wid = screen.availWidth;
+            var lefter = ((wid-415)/2)-203;
+            var toppist = ((het-12)/2);
+            move('#bebl')
+                .set('left', lefter)
+                .set('height', 320)
+                .set('top', toppist)
+                .set('width', 400)
+                .set('border-bottom-left-radius', 10)
+                .duration('1s')
+                .end();
+        }
+        function changebeblc(){
+            var het = screen.availHeight;
+            var wid = screen.availWidth;
+            var lefter = (wid-421)/2;
+            var toppist = (het-12)/2;
+            move('#bebl')
+                .set('left', lefter)
+                .set('height', 200)
+                .set('top', toppist)
+                .set('width', 200)
+                .set('border-bottom-left-radius', 200)
+                .duration('1s')
+                .end();
+        }
+        function changebebro(){
+            var het = screen.availHeight;
+            var wid = screen.availWidth;
+            var leftist = (wid-12)/2;
+            var toppist = ((het-12)/2);
+            move('#bebr')
+                .set('left', leftist)
+                .set('height', 320)
+                .set('top', toppist)
+                .set('width', 400)
+                .set('border-bottom-right-radius', 10)
+                .duration('1s')
+                .end();
+        }
+        function changebebrc(){
+            var het = screen.availHeight;
+            var wid = screen.availWidth;
+            var leftist = (wid-12)/2;
+            var toppist = (het-12)/2;
+            move('#bebr')
+                .set('left', leftist)
+                .set('height', 200)
+                .set('top', toppist)
+                .set('width', 200)
+                .set('border-bottom-right-radius', 200)
                 .duration('1s')
                 .end();
         }
@@ -129,6 +188,14 @@
             background-color:rgb(254,224,144);
             border-bottom-right-radius:200px;
         }
+        #bemi{
+            position:absolute;
+            width:75px;
+            border:3px solid rgb(69,117,180);
+            background-color:lightgray;
+            border-radius:200px;
+            text-align:center;
+        }
         .smash{
             position:relative;
             top:55px;
@@ -141,27 +208,33 @@
     
     <body onload="findwidandhid();">
         
-        <a id="betl" onclick="changebetlo();changebetrc();">
+        <a id="betl" onclick="changebetlo();changebetrc();changebeblc();changebebrc();">
             
             <p class="smash">One</p>
             
         </a>
         
-        <a id="betr" onclick="changebetro();changebetlc();">
+        <a id="betr" onclick="changebetro();changebetlc();changebeblc();changebebrc();">
             
             <p class="smash">Two</p>
         
         </a>
         
-        <a id="bebl" onclick="changebetlc();changebetrc();">
+        <a id="bebl" onclick="changebetlc();changebetrc();changebeblo();changebebrc();">
             
             <p class="smash">Three</p>
             
         </a>
         
-        <a id="bebr" onclick="changebetlc();changebetrc();">
+        <a id="bebr" onclick="changebetlc();changebetrc();changebeblc();changebebro();">
             
             <p class="smash">Four</p>
+            
+        </a>
+        
+        <a id="bemi" onclick="changebetlc();changebetrc();changebeblc();changebebrc();">
+            
+            <p class="bullcenter">C</p>
             
         </a>
         
